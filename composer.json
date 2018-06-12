@@ -1,0 +1,45 @@
+{
+  "name": "gepur-it/email_address_type",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Andrii Yakovlev",
+      "email": "yawa20@gmail.com"
+    },
+    {
+      "name": "Marina Mileva",
+      "email": "m934222258@gmail.com"
+    },
+    {
+      "name": "Viktor Pavlov",
+      "email": "zogxray@gmail.com"
+    }
+  ],
+  "description": "Gepur ERP PhoneNumber doctrine type",
+  "keywords": [
+    "email",
+    "address",
+    "doctrine",
+    "type"
+  ],
+  "homepage": "https://github.com/gepur-it/email_address_type",
+  "require": {
+    "php": "^7.1",
+    "doctrine/dbal": ">=2.5.4",
+    "jms/serializer": "^1.10"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^7.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "GepurIt\\EmailAddress\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "": "Tests"
+    }
+  }
+}
