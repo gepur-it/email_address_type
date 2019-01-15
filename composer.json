@@ -2,6 +2,7 @@
   "name": "gepur-it/email_address_type",
   "type": "library",
   "license": "MIT",
+  "version":"1.1.0",
   "authors": [
     {
       "name": "Andrii Yakovlev",
@@ -27,7 +28,7 @@
   "require": {
     "php": "^7.1",
     "doctrine/dbal": ">=2.5.4",
-    "jms/serializer": "^1.10"
+    "jms/serializer": ">=1.10"
   },
   "require-dev": {
     "phpunit/phpunit": "^7.2"
@@ -39,7 +40,7 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "": "Tests"
+      "GepurIt\\EmailAddress\\Tests": "Tests"
     }
   }
 }
