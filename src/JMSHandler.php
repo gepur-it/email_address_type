@@ -7,10 +7,10 @@
 namespace GepurIt\EmailAddress;
 
 use JMS\Serializer\Context;
-use JMS\Serializer\GraphNavigator;
+use JMS\Serializer\GraphNavigatorInterface;
 use JMS\Serializer\Handler\SubscribingHandlerInterface;
 use JMS\Serializer\JsonDeserializationVisitor;
-use JMS\Serializer\VisitorInterface;
+use JMS\Serializer\Visitor\SerializationVisitorInterface;
 use JMS\Serializer\XmlDeserializationVisitor;
 
 /**
@@ -43,13 +43,13 @@ class JMSHandler implements SubscribingHandlerInterface
         foreach (['json', 'xml', 'yml'] as $format) {
             $methods[] = [
                 'type'      => EmailAddress::class,
-                'direction' => GraphNavigator::DIRECTION_DESERIALIZATION,
+                'direction' => GraphNavigatorInterface::DIRECTION_DESERIALIZATION,
                 'format'    => $format,
             ];
             $methods[] = [
                 'type'      => EmailAddress::class,
                 'format'    => $format,
-                'direction' => GraphNavigator::DIRECTION_SERIALIZATION,
+                'direction' => GraphNavigatorInterface::DIRECTION_SERIALIZATION,
                 'method'    => 'serializeEmailAddress',
             ];
         }
@@ -58,14 +58,14 @@ class JMSHandler implements SubscribingHandlerInterface
     }
 
     /**
-     * @param VisitorInterface $visitor
+     * @param SerializationVisitorInterface $visitor
      * @param EmailAddress $emailAddress
      * @param array $type
      * @param Context $context
      * @return string
      */
     public function serializeEmailAddress(
-        VisitorInterface $visitor,
+        SerializationVisitorInterface $visitor,
         EmailAddress $emailAddress,
         array $type,
         Context $context
