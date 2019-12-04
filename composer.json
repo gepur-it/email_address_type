@@ -2,7 +2,7 @@
   "name": "gepur-it/email_address_type",
   "type": "library",
   "license": "MIT",
-  "version":"4.3.0",
+  "version":"5.0.0",
   "authors": [
     {
       "name": "Andrii Yakovlev",
@@ -26,9 +26,9 @@
   ],
   "homepage": "https://github.com/gepur-it/email_address_type",
   "require": {
-    "php": "^7.3",
+    "php": ">=7.3",
     "doctrine/dbal": ">=2.5.4",
-    "jms/serializer": "^3.1",
+    "jms/serializer": ">=3.1",
     "ext-mbstring": "*"
   },
   "require-dev": {
